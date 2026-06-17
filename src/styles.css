@@ -259,6 +259,8 @@ form button {
 }
 
 .stats-band {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
