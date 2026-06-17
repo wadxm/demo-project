@@ -33,7 +33,7 @@ export function App() {
   function toggleTheme() {
     const nextTheme = theme === "light" ? "dark" : "light";
     setTheme(nextTheme);
-    document.body.dataset.theme = nextTheme;
+    document.documentElement.dataset.theme = nextTheme;
   }
 
   function handleSubmit(event) {
