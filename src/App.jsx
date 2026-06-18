@@ -17,6 +17,10 @@ import { profile, projects, skills } from "./data/profile.js";
 
 const filters = ["All", "Product", "Brand", "Prototype"];
 
+function normalizeCategory(category) {
+  return category.trim().toLowerCase();
+}
+
 export function App() {
   const [theme, setTheme] = useState("light");
   const [activeFilter, setActiveFilter] = useState("All");
@@ -27,7 +31,9 @@ export function App() {
       return projects;
     }
 
-    return projects.filter((project) => project.category === activeFilter.toLowerCase());
+    return projects.filter(
+      (project) => normalizeCategory(project.category) === normalizeCategory(activeFilter),
+    );
   }, [activeFilter]);
 
   function toggleTheme() {
